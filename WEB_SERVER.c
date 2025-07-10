@@ -30,7 +30,7 @@ typedef struct  cashe_element{
     int len;
     char* url;
     time_t lru_track_cashe;
-    cashe_element* next;
+    struct cashe_element* next;
     
 }cashe_element;
 
@@ -117,7 +117,7 @@ int connectRemoteServer(char *host_addr,int port_number){
     fprintf(stderr,"Error in connecting to remote server...\n");
     return -1;
   }
-  return remoteSocket
+  return remoteSocket;
 }
 
 
