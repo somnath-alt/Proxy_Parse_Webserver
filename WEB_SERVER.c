@@ -144,7 +144,7 @@ int handle_request(int client_socketId, struct ParsedRequest* request, char* tem
         return -1;
     }
 
-    /* set a receive timeout on remote socket so recv won't block forever */
+    // set a receive timeout on remote socket so recv won't block forever 
     struct timeval tv;
     tv.tv_sec = RECV_TIMEOUT_SECONDS;
     tv.tv_usec = 0;
@@ -232,7 +232,7 @@ void* thread_fn(void* socketNew) {
         return NULL;
     }
 
-    /* read until \r\n\r\n (end of headers) or error/timeout */
+    // read until  (end of headers) or error/timeout
     while (1) {
         ssize_t r = recv(socket, buffer + total_received, buf_size - total_received - 1, 0);
         if (r <= 0) {
